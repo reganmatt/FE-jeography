@@ -1,11 +1,12 @@
 import React from 'react';
+import Header from './Components/Header'
 
-import './App.css';
+import './css/App.scss';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-     <p>Jeography</p>
+     <Header/>
     </div>
   );
 }
