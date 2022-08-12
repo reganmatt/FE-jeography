@@ -1,9 +1,12 @@
 import React from 'react';
+
 import './App.css';
 
 function App() {
   return (
-    <p>Jeography</p>
+    <div className="App">
+     <p>Jeography</p>
+    </div>
   );
 }
 
