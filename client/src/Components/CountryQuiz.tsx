@@ -2,10 +2,12 @@ import Header from "./Header";
 import Results from "./Results";
 import { useEffect, useState } from "react";
 import * as api from "../api";
-import { Question } from "../Types/types";
+import { CountryQuestion } from "../Types/types";
+import { useParams } from "react-router-dom";
 
-const WordQuiz = () => {
-  let [questions, setQuestions] = useState<Question[]>([]);
+const CountryQuiz = () => {
+  let country: string = useParams().country + "DB";
+  let [questions, setQuestions] = useState<CountryQuestion[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [questionNumber, setQuestionNumber] = useState(0);
   const [score, setScore] = useState(0);
@@ -13,35 +15,30 @@ const WordQuiz = () => {
   const [disableNextButton, setDisableNextButton] = useState(true);
 
   useEffect(() => {
-    api.getAroundTheWordQuiz().then((questions) => {
+    api.getCountry(country).then((questions) => {
       setQuestions(questions);
       setIsLoading(false);
     });
   }, []);
-  let quiz = "Around The World";
+
+  let quiz = country.slice(0, country.length - 2).toUpperCase();
 
   if (isLoading === true) {
     return <p>Loading...</p>;
   } else if (questionNumber === 5) {
     return <Results score={score} />;
   } else {
-    // console.log(
-    //   questions[questionNumber].correct_answer,
-    //   "<<<<<< CORRECT ANSWER"
-    // );
-    // console.log(score, "<<<<<<<<< SCORE");
-
     let answers = [
       ...questions[questionNumber].incorrect_answers,
       questions[questionNumber].correct_answer,
     ].sort();
 
-    console.log(questions);
-
     return (
-      <div className="AroundTheWordQuizPage">
+      <section>
         <Header />
-        <p>This Quiz is on: {quiz}</p>
+        <p>
+          This Quiz is on: {quiz === "NIRELAND" ? "NORTHERN IRELAND" : quiz}
+        </p>
         <p>
           Question ({questionNumber}/5): {questions[questionNumber].question}
         </p>
@@ -97,9 +94,9 @@ const WordQuiz = () => {
           <p>Sign up or login to collect your Jeos in your own ranch.</p>
         </div>
         <button>Ask for help</button>
-      </div>
+      </section>
     );
   }
 };
 
-export default WordQuiz;
+export default CountryQuiz;

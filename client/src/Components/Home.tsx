@@ -1,20 +1,57 @@
-import {Button} from '@mui/material';
+import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import Header from './Header';
+import Header from "./Header";
 
 const Home = () => {
-    return (
-      <div className="HomePage">
-        <Header/>
-        <section>
-        <Button variant="outlined" size='large'>Interactive Map</Button>
-        <Link to="/around-the-world">
-        <Button variant="outlined" size='large'>Around The Word</Button>
+  return (
+    <div className="HomePage">
+      <Header />
+      <section>
+        <Link to="/england">
+          <img
+            src="https://i.imgur.com/sOnXmUM.png"
+            className="England_Map"
+            alt="England Map"
+          />
         </Link>
-        </section>
-      </div>
-    );
-  }
+        <Link to="/scotland">
+          <img
+            src="https://i.imgur.com/HZc9YbY.png"
+            className="Scotland_Map"
+            alt="Scotland Map"
+          />
+        </Link>
+        <Link to="/wales">
+          <img
+            src="https://i.imgur.com/ofaYmvB.png"
+            className="Wales_Map"
+            alt="Wales Map"
+          />
+        </Link>
+        <Link to="/ireland">
+          <img
+            src="https://i.imgur.com/3qEgyT1.png"
+            className="Ireland_Map"
+            alt="Ireland Map"
+          />
+        </Link>
+        <Link to="/nIreland">
+          <img
+            src="https://i.imgur.com/BMvdoFx.png"
+            className="Northern_Ireland_Map"
+            alt="Northern Ireland Map"
+          />
+        </Link>
+        <Link to="/around-the-world">
+          <img
+            src="https://i.imgur.com/y51FieR.png"
+            className="World_Map"
+            alt="World Map"
+          />
+        </Link>
+      </section>
+    </div>
+  );
+};
 
-
-  export default Home
+export default Home;
