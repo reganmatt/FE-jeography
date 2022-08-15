@@ -1,11 +1,19 @@
 import {Button} from '@mui/material';
 import React from 'react';
-import Header from './Header';
+import {useAuth0} from '@auth0/auth0-react';
+
+// const {user } = useAuth0()
+
+
 
 const Home = () => {
+  // const {user } = useAuth0()
+ ;
+
     return (
+      
       <div className="HomePage">
-        <Header/>
+        
         <Button variant="outlined" size='large'>Interactive Map</Button>
         <Button variant="outlined" size='large'>Aroun The Word</Button>
       </div>
