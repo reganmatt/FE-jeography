@@ -9,12 +9,11 @@ const App: React.FC = () => {
   console.log(process.env)
   return (
     <div className="App">
-      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />}></Route>
           <Route path="/around-the-world" element={<WordQuiz/>}></Route>
         </Routes>
-      </BrowserRouter>
+   <section className="footer">This is a footer</section>
     </div>
   );
 };

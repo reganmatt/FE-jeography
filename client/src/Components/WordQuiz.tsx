@@ -3,6 +3,7 @@ import Results from "./Results";
 import { useEffect, useState } from "react";
 import * as api from "../api";
 import { Question } from "../Types/types";
+import '../css/AtwQuiz.scss';
 
 const WordQuiz = () => {
   let [questions, setQuestions] = useState<Question[]>([]);
@@ -23,14 +24,8 @@ const WordQuiz = () => {
   if (isLoading === true) {
     return <p>Loading...</p>;
   } else if (questionNumber === 5) {
-    return <Results score={score} />;
+    return <Results category={quiz} score={score} />;
   } else {
-    // console.log(
-    //   questions[questionNumber].correct_answer,
-    //   "<<<<<< CORRECT ANSWER"
-    // );
-    // console.log(score, "<<<<<<<<< SCORE");
-
     let answers = [
       ...questions[questionNumber].incorrect_answers,
       questions[questionNumber].correct_answer,
@@ -39,58 +34,70 @@ const WordQuiz = () => {
     console.log(questions);
 
     return (
-      <div className="AroundTheWordQuizPage">
+      <div className="AroundTheWorldQuizPage">
         <Header />
-        <p>This Quiz is on: {quiz}</p>
-        <p>
-          Question ({questionNumber}/5): {questions[questionNumber].question}
+        <section className="quiz-progress">  Question ({questionNumber + 1}/5)</section>
+        <section className="quiz-title">
+        <p>This Quiz is on...</p>
+        <p className="quiz-country">{quiz}</p>
+        </section>
+        <section className="quiz-body">
+        <p className="question-title">
+         {questions[questionNumber].question}
         </p>
+        <section className="possible-answers">
         <div>
-          <p>Answers:</p>
-          <button
-            onClick={() => {
-              setAnswer(answers[0]);
-              setDisableNextButton(false);
-            }}
-          >
-            {answers[0]}
-          </button>
-          <button
-            onClick={() => {
-              setAnswer(answers[1]);
-              setDisableNextButton(false);
-            }}
-          >
-            {answers[1]}
-          </button>
-          <button
-            onClick={() => {
-              setAnswer(answers[2]);
-              setDisableNextButton(false);
-            }}
-          >
-            {answers[2]}
-          </button>
-          <button
-            onClick={() => {
-              setAnswer(answers[3]);
-              setDisableNextButton(false);
-            }}
-          >
-            {answers[3]}
-          </button>
+          <section className="flex">
+            <button className="answer-option"
+              onClick={() => {
+                setAnswer(answers[0]);
+                setDisableNextButton(false);
+              }}
+              >
+              {answers[0]}
+            </button>
+            <button className="answer-option"
+              onClick={() => {
+                setAnswer(answers[1]);
+                setDisableNextButton(false);
+              }}
+              >
+              {answers[1]}
+            </button>
+          </section>
+          <section className="flex">
+            <button className="answer-option"
+              onClick={() => {
+                setAnswer(answers[2]);
+                setDisableNextButton(false);
+              }}
+              >
+              {answers[2]}
+            </button>
+            <button className="answer-option"
+              onClick={() => {
+                setAnswer(answers[3]);
+                setDisableNextButton(false);
+              }}
+              >
+              {answers[3]}
+            </button>
+          </section>
         </div>
+        </section>
         <button
           onClick={() => {
             setQuestionNumber(questionNumber + 1);
+            setDisableNextButton(true);
             if (answer === questions[questionNumber].correct_answer) {
               setScore(score + 1);
             }
           }}
           disabled={disableNextButton}
-        >
+          >
           Next Question
         </button>
+        </section>
         <div>
           <p>Don't lose your Jeo Badges!</p>
           <p>Sign up or login to collect your Jeos in your own ranch.</p>

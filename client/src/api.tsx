@@ -5,6 +5,12 @@ const aroundTheWordAPI = axios.create({
   baseURL: "https://opentdb.com",
 });
 
+const jeographyApi = axios.create({
+  baseURL: "https://jeography.herokuapp.com/",
+});
+
+
+
 export function getAroundTheWordQuiz() {
   return aroundTheWordAPI
     .get("/api.php?amount=5&category=22&difficulty=easy&type=multiple")
@@ -12,5 +18,14 @@ export function getAroundTheWordQuiz() {
       let questions: Question[] = res.data.results;
 
       return questions;
+    });
+}
+
+export function getBadges() {
+  return jeographyApi
+    .get("/jeoBadges")
+    .then((res) => {
+      let badges = res.data.results;
+      return badges;
     });
 }
