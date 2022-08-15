@@ -25,11 +25,11 @@ const WordQuiz = () => {
   } else if (questionNumber === 5) {
     return <Results score={score} />;
   } else {
-    console.log(
-      questions[questionNumber].correct_answer,
-      "<<<<<< CORRECT ANSWER"
-    );
-    console.log(score, "<<<<<<<<< SCORE");
+    // console.log(
+    //   questions[questionNumber].correct_answer,
+    //   "<<<<<< CORRECT ANSWER"
+    // );
+    // console.log(score, "<<<<<<<<< SCORE");
 
     let answers = [
       ...questions[questionNumber].incorrect_answers,
