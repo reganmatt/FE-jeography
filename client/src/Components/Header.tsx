@@ -1,6 +1,6 @@
 import '../css/Header.scss';
 import AuthNav from './AuthNav';
-
+import {useAuth0} from '@auth0/auth0-react';
 
 const Header: React.FC = () => {
     return  (
