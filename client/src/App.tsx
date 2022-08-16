@@ -8,14 +8,12 @@ import "./css/App.scss";
 const App: React.FC = () => {
   return (
     <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/around-the-world" element={<WordQuiz/>}></Route>
-        </Routes>
-         <Route path="/:country" element={<CountryQuiz />}></Route>
-         <section className="footer">This is a footer</section>
-        </Routes>
-
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/around-the-world" element={<WordQuiz />}></Route>
+        <Route path="/:country" element={<CountryQuiz />}></Route>
+        <section className="footer">This is a footer</section>
+      </Routes>
     </div>
   );
 };
