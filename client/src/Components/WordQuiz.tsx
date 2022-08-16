@@ -3,7 +3,7 @@ import Results from "./Results";
 import { useEffect, useState } from "react";
 import * as api from "../api";
 import { Question } from "../Types/types";
-import '../css/AtwQuiz.scss';
+import '../css/Quiz.scss';
 
 const WordQuiz = () => {
   let [questions, setQuestions] = useState<Question[]>([]);
@@ -12,6 +12,7 @@ const WordQuiz = () => {
   const [score, setScore] = useState(0);
   const [answer, setAnswer] = useState("");
   const [disableNextButton, setDisableNextButton] = useState(true);
+ 
 
   useEffect(() => {
     api.getAroundTheWordQuiz().then((questions) => {
@@ -32,7 +33,7 @@ const WordQuiz = () => {
     ].sort();
 
     return (
-      <div className="AroundTheWorldQuizPage">
+      <div className="QuizPage">
         <Header />
         <section className="quiz-progress">  Question ({questionNumber + 1}/5)</section>
         <section className="quiz-title">
@@ -83,8 +84,7 @@ const WordQuiz = () => {
           </section>
         </div>
         </section>
-
-        <button
+        <button className="next-question-btn"
           onClick={() => {
             setQuestionNumber(questionNumber + 1);
             setDisableNextButton(true);
@@ -97,11 +97,10 @@ const WordQuiz = () => {
           Next Question
         </button>
         </section>
-        <div>
-          <p>Don't lose your Jeo Badges!</p>
-          <p>Sign up or login to collect your Jeos in your own ranch.</p>
-        </div>
-        <button>Ask for help</button>
+      <section className="help-button-container">
+        <button className="help-button">Ask for help</button>
+        
+      </section>
       </div>
     );
   }
