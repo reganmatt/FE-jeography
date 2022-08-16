@@ -1,13 +1,11 @@
-import {Button} from '@mui/material';
+import { Button } from "@mui/material";
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
 
 const Home = () => {
   return (
     <section>
-      <Header />
       <div>
         <p>Be a geography whizz</p>
         <p>with our Jeography quiz!</p>

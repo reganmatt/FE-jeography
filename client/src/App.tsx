@@ -4,11 +4,13 @@ import Home from "./Components/Home";
 import SelectQuiz from "./Components/SelectQuiz";
 import WordQuiz from "./Components/WordQuiz";
 import CountryQuiz from "./Components/CountryQuiz";
-import Profile from "./Components/Profile"
+import Profile from "./Components/Profile";
+import Header from "./Components/Header";
 
 const App: React.FC = () => {
   return (
     <div className="App">
+      <Header />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/select_quiz" element={<SelectQuiz />}></Route>
