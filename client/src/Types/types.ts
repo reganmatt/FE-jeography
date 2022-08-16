@@ -15,3 +15,10 @@ export interface Question {
     incorrect_answers: string[];
   }
 
+  export interface Badges {
+    _id: string;
+    animal: string;
+    animal_id: number;
+    country: string;
+    img_url: string;
+  }

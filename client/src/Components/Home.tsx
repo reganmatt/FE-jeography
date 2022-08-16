@@ -1,77 +1,29 @@
 import { Button } from "@mui/material";
+import React from "react";
+import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import '../css/StudentLanding.scss'
 
 const Home = () => {
   return (
-    <div className="HomePage">
-      <Header />
-      <section className="page-title-container">
-      <p className="page-title">Start collecting Jeos</p>
-
-      </section>
-      <p className="sub-title">Choose your quiz below!</p>
-      <section className="maps-container">
-        <section className="flex">
-
-        <Link to="/england">
-          <section className="map-and-title">
-          <img
-            src="https://i.imgur.com/PhD8Bdh.png"
-            className="map-select"
-            alt="England Map"
-            />
-            <p className="map-title">Take a quiz about England</p>
-          </section>
-        </Link>
-        <Link to="/scotland">
-          <img
-            src="https://i.imgur.com/Zo2pdiF.png"
-            className="map-select"
-            alt="Scotland Map"
-            />
-            <p className="map-title">Take a quiz about Scotland</p>
-        </Link>
-        <Link to="/wales">
-          <img
-            src="https://i.imgur.com/4hccEws.png"
-            className="map-select"
-            alt="Wales Map"
-            />
-            <p className="map-title">Take a quiz about Wales</p>
-        </Link>
-            </section>
-        <Link to="/ireland">
-          <img
-            src="https://i.imgur.com/P6zorSE.png"
-            className="map-select"
-            alt="Ireland Map"
-          />
-          <p className="map-title">Take a quiz about Ireland</p>
-        </Link>
-        <Link to="/nIreland">
-          <img
-            src="https://i.imgur.com/7D14x2n.png"
-            className="map-select"
-            alt="Northern Ireland Map"
-          />
-          <p className="map-title">Take a quiz about Northern Ireland</p>
-        </Link>
-        <Link to="/around-the-world">
-          <img
-            src="https://i.imgur.com/BxQkIjp.png"
-            className="map-select"
-            alt="World Map"
-          />
-          <p className="map-title">Take a quiz about the whole world</p>
-        </Link>
-      </section>
-      <section className="help-button-container">
-        <button className="help-button">Ask for help</button>
-
-          </section>
-    </div>
+    <section>
+      <div>
+        <p>Be a geography whizz</p>
+        <p>with our Jeography quiz!</p>
+      </div>
+      <div>
+        <p>
+          Revise geography and collect animal badges called Jeos. Win at
+          geography and watch your Jeo collection grow!
+        </p>
+        <img src="https://i.imgur.com/72YttcG.png" alt="logo" />
+        <Button size="small" variant="contained">
+          I'm a teacher
+        </Button>
+        <Button size="small" variant="contained">
+          I'm a student
+        </Button>
+      </div>
+    </section>
   );
 };
 
