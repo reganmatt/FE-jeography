@@ -5,7 +5,6 @@ import '../css/StudentLanding.scss'
 const SelectQuiz = () => {
     return (
       <div className="HomePage">
-        <Header />
         <section className="page-title-container">
         <p className="page-title">Start collecting Jeos</p>
   
