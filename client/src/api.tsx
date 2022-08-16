@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Question, CountryQuestion, Badges } from "./Types/types";
+import { Question, CountryQuestion, Badges, Students } from "./Types/types";
 
 const aroundTheWordAPI = axios.create({
   baseURL: "https://opentdb.com",
@@ -39,4 +39,12 @@ export function getCountry(country: string) {
 
       return questions;
     });
+}
+
+export function getStudents() {
+  return jeographyApi
+  .get("/students")
+  .then(({data}) => {
+    console.log(data.students)
+  })
 }

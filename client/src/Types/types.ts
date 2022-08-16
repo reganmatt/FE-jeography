@@ -22,3 +22,15 @@ export interface Question {
     country: string;
     img_url: string;
   }
+
+  export interface Students {  
+    _id:string,
+    type:string,
+    username:string,
+    avatarURL:string,
+    password:string,
+    email:string,
+    userPoints:number,
+    jeoRanch:string[],
+    userStatus:string
+  }

@@ -19,8 +19,8 @@ const Results = ({ score, category }: UserScore) => {
   useEffect(() => {
     api.getBadges().then((badges) => {
       setBadges([...badges]);
-      let a: number = Math.round(getRandomArbitrary(0, badges.length - 1));
-      setBadgeNumber(a);
+      let randomBadgeNumber: number = Math.round(getRandomArbitrary(0, badges.length - 1));
+      setBadgeNumber(randomBadgeNumber);
       setIsLoading(false);
     });
   }, [score, category]);
