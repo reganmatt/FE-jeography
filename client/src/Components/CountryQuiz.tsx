@@ -26,7 +26,7 @@ const CountryQuiz = () => {
   if (isLoading === true) {
     return <p>Loading...</p>;
   } else if (questionNumber === 5) {
-    return <Results score={score} />;
+    return <Results score={score} category={quiz} />;
   } else {
     let answers = [
       ...questions[questionNumber].incorrect_answers,
