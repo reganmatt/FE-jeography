@@ -31,8 +31,6 @@ const WordQuiz = () => {
       questions[questionNumber].correct_answer,
     ].sort();
 
-    console.log(questions);
-
     return (
       <div className="AroundTheWorldQuizPage">
         <Header />
@@ -85,6 +83,7 @@ const WordQuiz = () => {
           </section>
         </div>
         </section>
+
         <button
           onClick={() => {
             setQuestionNumber(questionNumber + 1);

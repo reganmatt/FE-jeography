@@ -1,15 +1,14 @@
 import axios from "axios";
-import { Question } from "./Types/types";
+import { Question, CountryQuestion } from "./Types/types";
 
 const aroundTheWordAPI = axios.create({
   baseURL: "https://opentdb.com",
 });
 
+
 const jeographyApi = axios.create({
   baseURL: "https://jeography.herokuapp.com/",
 });
-
-
 
 export function getAroundTheWordQuiz() {
   return aroundTheWordAPI
@@ -21,11 +20,26 @@ export function getAroundTheWordQuiz() {
     });
 }
 
+
 export function getBadges() {
   return jeographyApi
     .get("/jeoBadges")
     .then((res) => {
       let badges = res.data.results;
       return badges;
+
+export function getCountry(country: string) {
+  return jeographyApi
+    .get(`/${country}`, {
+      params: {
+        country: country,
+      },
+    })
+    .then(({ data }) => {
+      console.log(data.selectedCountry);
+      let questions: CountryQuestion[] = data.selectedCountry;
+
+      return questions;
+
     });
 }
