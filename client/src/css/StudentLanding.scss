@@ -1,0 +1,77 @@
+$primary-1: #2890CC;
+$primary-2: #FFCF40;
+$primary-3: #6AC782;
+$secondary: #EC64BE;
+
+.page-title-container {
+   
+}
+
+.page-title {
+    color: rgba(0, 0, 0, 0.683);
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+.sub-title {
+    font-size: 1rem;
+    margin-left: 8px;
+    margin-bottom: 20px;
+}
+
+.maps-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.map-select {
+    height: 150px;
+    width: 150px;
+    margin: 2px;
+    padding: 5px;
+}
+
+.map-title {
+width: 120px;
+height: 20px;
+text-align: center;
+}
+
+.help-button-container {
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0 15px 0;
+    padding: 15px;
+}
+
+.help-button {
+    background-color: $secondary;
+    width: 150px;
+    color: white;
+    box-shadow: none;
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+    font-weight: 900;
+}
+
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
