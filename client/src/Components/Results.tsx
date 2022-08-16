@@ -17,7 +17,8 @@ const Results = ({ score, category }: UserScore) => {
     api.getBadges().then((badges) => {
       setBadges([...badges]);
       setIsLoading(false);
-      setBadgeNumber(() => getRandomArbitrary(0, badges.length));
+      let a: number = getRandomArbitrary(0, badges.length);
+      setBadgeNumber(a);
     });
   }, []);
 
