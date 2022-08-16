@@ -1,0 +1,48 @@
+$primary-1: #2890CC;
+$primary-2: #FFCF40;
+$primary-3: #6AC782;
+$secondary: #EC64BE;
+$secondary-2: #000000ae;
+
+.homepage {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-align {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    padding: 10px;
+
+
+}
+
+.home-title {
+    width: 300px;
+padding: 10px;
+    font-size: 1.8rem;
+}
+
+.home-title-1 {
+color: $secondary-2;
+width: 300px;
+}
+
+.home-title-2 {
+    color: $primary-1;
+    width: 300px;
+    }
+
+.student-btn {
+    margin: 10px;
+}
+
+.align-right {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-end;
+    margin-top: 25px;
+    margin-right: 0;
+
+}

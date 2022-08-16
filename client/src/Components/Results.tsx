@@ -44,7 +44,6 @@ const Results = ({ score, category }: UserScore) => {
   } else {
     return (
       <div>
-        <Header />
         <section className="Results-Body">
           <section className="Results-Title">
             <p>Results from your quiz on :</p>
