@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Header from "./Header";
 import * as api from "../api";
 import { Badges } from "../Types/types";
@@ -55,10 +55,11 @@ const Results = ({ score, category }: UserScore) => {
             />
             <p>{score} / 5</p>
             <p>{score > 2 ? "Well done, you earned a Jeo!" : lowScore}</p>
-
-            <Button size="small" variant="contained">
-              Take another quiz !
-            </Button>
+            <Link to="/select_quiz">
+              <Button size="small" variant="contained">
+                Take another quiz !
+              </Button>
+            </Link>
             <Button size="small" variant="contained">
               Ask for help
             </Button>
