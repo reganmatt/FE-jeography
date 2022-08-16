@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Question, CountryQuestion } from "./Types/types";
+import { Question, CountryQuestion, Badges } from "./Types/types";
 
 const aroundTheWordAPI = axios.create({
   baseURL: "https://opentdb.com",
@@ -21,7 +21,7 @@ export function getAroundTheWordQuiz() {
 
 export function getBadges() {
   return jeographyApi.get("/jeoBadges").then((res) => {
-    let badges = res.data.results;
+    let badges: Badges[] = res.data.badges;
     return badges;
   });
 }
