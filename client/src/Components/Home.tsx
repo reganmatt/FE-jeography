@@ -1,17 +1,29 @@
 import { Button } from "@mui/material";
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="HomePage">
-      <Button variant="outlined" size="large">
-        Interactive Map
-      </Button>
-      <Button variant="outlined" size="large">
-        Aroun The Word
-      </Button>
-    </div>
+    <section>
+      <div>
+        <p>Be a geography whizz</p>
+        <p>with our Jeography quiz!</p>
+      </div>
+      <div>
+        <p>
+          Revise geography and collect animal badges called Jeos. Win at
+          geography and watch your Jeo collection grow!
+        </p>
+        <img src="https://i.imgur.com/72YttcG.png" alt="logo" />
+        <Button size="small" variant="contained">
+          I'm a teacher
+        </Button>
+        <Button size="small" variant="contained">
+          I'm a student
+        </Button>
+      </div>
+    </section>
   );
 };
 

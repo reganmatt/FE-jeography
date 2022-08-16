@@ -1,17 +1,30 @@
 .header {
+    height: 60px;
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
-    background-color: beige;
-}
-
-
-.jeo-logo {
-    height: 50px;
-    margin-top: 20px;
+    justify-content:space-between;
+    align-items: center;
+    background-color: #2890CC;
+    padding: 0 30px;
 }
 
 .jeo-banner {
-    height: 80px;
-    margin-top: 5px;
+    margin: 20px;
+    height: 45px;
+}
+
+.auth-button {
+
+}
+
+.btn {
+    background-color: #FFCF40;
+    width: 100px;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+    font-weight: 900;
 }
