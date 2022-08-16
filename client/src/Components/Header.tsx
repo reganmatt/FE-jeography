@@ -6,7 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 const Header: React.FC = () => {
     return  (
       <div className="header">
-      <img src="https://i.imgur.com/HuSyK8h.png" alt="jeo-banner" className="jeo-banner"></img>
+
        <img src="https://i.imgur.com/1XIaWws.png" alt="jeo-banner" className="jeo-banner"></img>  
        <section className='auth-button'>
        <AuthNav />
