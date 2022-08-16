@@ -1,7 +1,8 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Components/Home";
+import { Routes, Route } from "react-router-dom";
+import SelectQuiz from "./Components/SelectQuiz";
 import WordQuiz from "./Components/WordQuiz";
+import Home from "./Components/Home";
 import CountryQuiz from "./Components/CountryQuiz";
 import "./css/App.scss";
 
@@ -10,6 +11,7 @@ const App: React.FC = () => {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />}></Route>
+        <Route path="/select_quiz" element={<SelectQuiz />}></Route>
         <Route path="/around-the-world" element={<WordQuiz />}></Route>
         <Route path="/:country" element={<CountryQuiz />}></Route>
       </Routes>
