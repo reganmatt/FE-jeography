@@ -8,7 +8,7 @@ const LoginButton = () => {
   return (
     <button
       className="btn btn-primary btn-block"
-      onClick={() => loginWithRedirect({redirectUri: 'http://localhost:3000/profile'})}
+      onClick={() => loginWithRedirect({redirectUri: 'http://localhost:3000/welcome'})}
     >
       Log In
     </button>
