@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
+import "./css/App.scss";
+import Header from "./Components/Header";
 import SelectQuiz from "./Components/SelectQuiz";
 import WordQuiz from "./Components/WordQuiz";
 import CountryQuiz from "./Components/CountryQuiz";
 import Profile from "./Components/Profile";
-import Header from "./Components/Header";
 
 const App: React.FC = () => {
   return (
