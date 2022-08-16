@@ -12,8 +12,8 @@ const App: React.FC = () => {
         <Route path="/" element={<Home />}></Route>
         <Route path="/around-the-world" element={<WordQuiz />}></Route>
         <Route path="/:country" element={<CountryQuiz />}></Route>
-        <section className="footer">This is a footer</section>
       </Routes>
+      <section className="footer">This is a footer</section>
     </div>
   );
 };
