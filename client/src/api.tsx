@@ -34,17 +34,16 @@ export function getCountry(country: string) {
       },
     })
     .then(({ data }) => {
-      console.log(data.selectedCountry);
       let questions: CountryQuestion[] = data.selectedCountry;
-
       return questions;
     });
 }
 
 export function getStudents() {
   return jeographyApi
-  .get("/students")
-  .then(({data}) => {
-    console.log(data.students)
-  })
+    .get("/students")
+    .then(({ data: {students} }) => {
+      console.log(students, "in the api")
+      return students;
+    })
 }
