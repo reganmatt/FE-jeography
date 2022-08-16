@@ -14,3 +14,4 @@ export interface Question {
     country: string;
     incorrect_answers: string[];
   }
+

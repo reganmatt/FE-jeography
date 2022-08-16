@@ -5,7 +5,8 @@ const aroundTheWordAPI = axios.create({
   baseURL: "https://opentdb.com",
 });
 
-const countryAPI = axios.create({
+
+const jeographyApi = axios.create({
   baseURL: "https://jeography.herokuapp.com/",
 });
 
@@ -19,8 +20,16 @@ export function getAroundTheWordQuiz() {
     });
 }
 
+
+export function getBadges() {
+  return jeographyApi
+    .get("/jeoBadges")
+    .then((res) => {
+      let badges = res.data.results;
+      return badges;
+
 export function getCountry(country: string) {
-  return countryAPI
+  return jeographyApi
     .get(`/${country}`, {
       params: {
         country: country,
@@ -31,5 +40,6 @@ export function getCountry(country: string) {
       let questions: CountryQuestion[] = data.selectedCountry;
 
       return questions;
+
     });
 }
