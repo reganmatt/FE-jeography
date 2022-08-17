@@ -34,3 +34,7 @@ export interface Question {
     jeoRanch:string[],
     userStatus:string
   }
+
+  export interface WelcomeJeo {
+    
+  }
