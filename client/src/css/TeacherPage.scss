@@ -1,17 +1,35 @@
 *{
-  margin:0;    
-  padding: 0.35em 0.75em;
+  margin:0;
   
   }
 
-.teteacher-page {
+.teacher-page {  
   display:flex;
   flex-wrap: wrap;
+  padding: 0.35em 0.75em;
+  width: 100%;
+  max-width: 550px;
+  margin: 0px auto;
+  text-align: left;
+}
+
+.teacher-welcome{
+  margin-top: 60px;
 }
 
 .teacherpage-students{
-  display:flex;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  display: flex;
   flex-wrap: wrap;
+  align-items: left;
+  justify-content: space-around;
+}
+
+.box-caption {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align:center;
 }
   
   
