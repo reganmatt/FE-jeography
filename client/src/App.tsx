@@ -45,7 +45,7 @@ const App: React.FC = () => {
         <Route path="/teacher" element={<TeacherPage />}></Route>
       </Routes>
         <section className="footer"></section>
-      <section className="footer">This is a footer</section>
+      <section className="footer"></section>
     </div>
     </UserContext.Provider>
   );

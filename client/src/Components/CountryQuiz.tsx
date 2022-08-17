@@ -36,7 +36,6 @@ const CountryQuiz = () => {
 
     return (
       <section className="QuizPage">
-        <Header />
         <section className="quiz-progress">  Question ({questionNumber + 1}/5)</section>
         <section className="quiz-title">
         <p>This Quiz is on...</p>

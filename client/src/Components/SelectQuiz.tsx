@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import Header from "./Header";
 import '../css/StudentLanding.scss'
 
 const SelectQuiz = () => {
@@ -40,12 +39,14 @@ const SelectQuiz = () => {
               <p className="map-title">Take a quiz about Wales</p>
           </Link>
               </section>
+              <section className="flex">
+
           <Link to="/ireland">
             <img
               src="https://i.imgur.com/P6zorSE.png"
               className="map-select"
               alt="Ireland Map"
-            />
+              />
             <p className="map-title">Take a quiz about Ireland</p>
           </Link>
           <Link to="/nIreland">
@@ -53,7 +54,7 @@ const SelectQuiz = () => {
               src="https://i.imgur.com/7D14x2n.png"
               className="map-select"
               alt="Northern Ireland Map"
-            />
+              />
             <p className="map-title">Take a quiz about Northern Ireland</p>
           </Link>
           <Link to="/around-the-world">
@@ -61,9 +62,10 @@ const SelectQuiz = () => {
               src="https://i.imgur.com/BxQkIjp.png"
               className="map-select"
               alt="World Map"
-            />
+              />
             <p className="map-title">Take a quiz about the whole world</p>
           </Link>
+              </section>
         </section>
         <section className="help-button-container">
           <button className="help-button">Ask for help</button>
