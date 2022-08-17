@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Question, CountryQuestion, Badges, Students } from "./Types/types";
+import { Question, CountryQuestion, Badges, Students, Comments } from "./Types/types";
 
 const aroundTheWordAPI = axios.create({
   baseURL: "https://opentdb.com",
@@ -45,4 +45,17 @@ export function getStudents() {
       console.log(students, "in the api")
       return students;
     })
+}
+
+export function getComments(nickname: string) {
+  return jeographyApi
+    .get(`/comments/${nickname}`, {
+      params: {
+        username: nickname,
+      },
+    })
+    .then(({ data }) => {
+      let comments: Comments[] = data.comments;
+      return comments;
+    });
 }

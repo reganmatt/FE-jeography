@@ -34,3 +34,10 @@ export interface Question {
     jeoRanch:string[],
     userStatus:string
   }
+
+  export interface Comments {
+    _id: string;
+    body: string;
+    username: number;
+    created_at: string;
+  }
