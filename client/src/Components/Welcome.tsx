@@ -1,47 +1,64 @@
-import {useEffect, useState} from 'react'
-import axios from 'axios'
+import { useEffect, useState } from "react";
+import axios from "axios";
 import { useAuth0, User } from "@auth0/auth0-react";
-import {useNavigate, Link} from 'react-router-dom'
-
-type JeographyUser = User&{type: string, avatarURL: string[], jeoRanch:string[], userPoints: number, userStatus: string}
+import { useNavigate, Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../context/User";
+import '../css/Welcome.scss'
 
 const Welcome = () => {
-  let userProps = { type:'student',avatarURL:['https://i.imgur.com/T5IjKoI.png'],jeoRanch:['https://i.imgur.com/oxYZ7c2.png', 'https://i.imgur.com/T5IjKoI.png'],userPoints:0,userStatus:'Learning geography with jeography!'}
-  
-  const {isAuthenticated, user} = useAuth0()
-  const [profile, setProfile] = useState<JeographyUser>()
-
-  
-  useEffect(() => {
-   
-    if (isAuthenticated && user !== undefined) {
-      const newUserObj= {...user, ...userProps }
-      setProfile(newUserObj)
-    }
-  }, [isAuthenticated])
+  const { profile, setProfile } = useContext(UserContext);
+  const { user } = useAuth0();
 
   useEffect(() => {
-
-    if (profile !== undefined) {
-      if (user !== undefined && !profile.userPoints) {
+      if (user !== undefined) {
         axios
-            .patch(`https://jeography.herokuapp.com/student/${user.nickname}/profile`)
-            .then((response) => {
-            })
-      } 
+          .patch(
+            `https://jeography.herokuapp.com/student/${user.nickname}/profile`
+          )
+          .then((response) => {});
     }
-  }, [])
-const navigate = useNavigate()
-  function handleClick() {
-   return navigate('/profile')
+  }
+  , [user]);
+  const navigate = useNavigate();
+  function handleClickProfile() {
+    return navigate("/profile");
   }
 
-  return (
-    <div>
-        Welcome!
-        <button type='button' onClick={handleClick}>Open the Jeo Ranch!</button>
-    </div>
-  )
-}
 
-export default Welcome
+  function handleClickQuiz() {
+    return navigate("/select_quiz");
+  }
+
+  const badges = [
+    "https://i.imgur.com/x0cwPla.png",
+    "https://i.imgur.com/EmMa4Gz.png",
+    "https://i.imgur.com/yxlSmoL.png",
+    "https://i.imgur.com/mM4LmUV.png",
+    "https://i.imgur.com/J1q0Gue.png",
+  ];
+
+  return (
+    <div >
+      <h1 className='welcome-text'>Welcome {profile?.nickname}!</h1>
+      <div className='welcome-btn-container'>
+
+      <button className='profile-btn' type="button" onClick={handleClickProfile}>
+        Visit your profile
+      </button>
+      <button className='quiz-btn' type="button" onClick={handleClickQuiz}>
+        Choose a quiz!
+      </button>
+      </div>
+      <div className='welcome-jeoranch-container'>
+        <img className='welcome-jeoranch-badge'src="https://i.imgur.com/x0cwPla.png" alt='Jeoranch' /> 
+        <img className='welcome-jeoranch-badge'src="https://i.imgur.com/EmMa4Gz.png" alt='Jeoranch' /> 
+        <img className='welcome-jeoranch-badge'src="https://i.imgur.com/yxlSmoL.png" alt='Jeoranch' /> 
+        <img className='welcome-jeoranch-badge'src="https://i.imgur.com/mM4LmUV.png" alt='Jeoranch' /> 
+        <img className='welcome-jeoranch-badge'src="https://i.imgur.com/J1q0Gue.png" alt='Jeoranch' /> 
+      </div>
+    </div>
+  );
+};
+
+export default Welcome;

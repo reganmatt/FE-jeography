@@ -1,0 +1,65 @@
+.results_page {
+  width: 100%;
+  max-width: 550px;
+  margin: 0px auto;
+  text-align: left;
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 2px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  padding: 2px;
+  font-size: 1.8rem;
+  color: #2890cc;
+  font-weight: bold;
+}
+
+.avatar_section {
+  margin-top: 60px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  //justify-content: space-around;
+}
+
+.score_section {
+  margin: 0px auto;
+  text-align: left;
+  //   font-size: 2vw;
+}
+
+.score {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.score_text {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.results_button {
+  margin-right: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: left;
+  justify-content: space-around;
+}
+
+.img {
+  max-width: 50%;
+  height: auto;
+}

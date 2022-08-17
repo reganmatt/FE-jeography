@@ -35,4 +35,7 @@ export interface Question {
     userStatus:string
   }
 
-  
+  export interface WelcomeJeo {
+    
+  }
+
