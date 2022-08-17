@@ -38,7 +38,7 @@ const Profile = () => {
     }
   }, [profile]);
 
-  console.log(comments[0].body, '<<<<comments')
+
 
   return (
     <div>
@@ -58,9 +58,9 @@ const Profile = () => {
       </section>
       </section>
       <section className='teacher-comments'><p className='comments-title'>Notes from your teacher:</p>
-      <section>
+      <section className='all-comments'>
       {comments ? comments.map((comment)=>{
-  return (<p>on {comment.created_at} your teacher said: {comment.body}</p>)
+  return (<div className='individual-comment'><p className='created_at'>on {comment.created_at.slice(0, 15)} your teacher said:</p><p>{comment.body}</p></div>)
 }) : null}
       </section>
       </section>

@@ -31,6 +31,15 @@ font-size: 1.2rem);
     justify-content: center;
 }
 
+.profile-container {
+    display: flex;
+flex-direction: row;
+justify-content:center;
+}
+
+.jeo-ranch {
+    
+}
 
 .default-font {
     color: $secondary-2;
@@ -43,11 +52,6 @@ font-size: 1.2rem);
     font-size: 1.2rem;
 }
 
-.profile-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
 
 .jeo-ranch-title {
     margin: 50px 0 0 30px;
@@ -66,4 +70,12 @@ font-size: 1.2rem);
 
 .jeo-img:first-of-type{
     margin-left: 0;
+}
+
+.teacher-comments {
+margin: 50px 0 0 30px;
+}
+
+.individual-comment {
+    margin: 10px 0 0 0;
 }
