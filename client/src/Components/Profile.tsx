@@ -4,6 +4,7 @@ import { useAuth0, User } from "@auth0/auth0-react";
 import '../css/Profile.scss'
 import { Comments } from "../Types/types";
 import * as api from "../api";
+import { Link } from "react-router-dom";
 
 type JeographyUser = User&{type: string, avatarURL: string[], jeoRanch:string[], userPoints: number, userStatus: string}
 
@@ -57,7 +58,7 @@ const Profile = () => {
 }) : null}
       </section>
       </section>
-      <section className='teacher-comments'><p className='comments-title'>Notes from your teacher:</p>
+      <section className='teacher-comments'><p className='comments-title'>Notes from your teacher</p>
       <section className='all-comments'>
       {comments ? comments.map((comment)=>{
   return (<div className='individual-comment'><p className='created_at'>on {comment.created_at.slice(0, 15)} your teacher said:</p><p>{comment.body}</p></div>)
@@ -65,8 +66,16 @@ const Profile = () => {
       </section>
       </section>
 </section>
+<Link to="/select_quiz">
+
+<section className='button-container'>
+
+     <button className='take-quiz-btn'>Take a quiz!</button>
+</section>
+</Link>
     </div>
   )
 }
 
 export default Profile
+
