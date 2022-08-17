@@ -8,6 +8,7 @@ import SelectQuiz from "./Components/SelectQuiz";
 import WordQuiz from "./Components/WordQuiz";
 import CountryQuiz from "./Components/CountryQuiz";
 import "./css/App.scss";
+import TeacherPage from "./Components/TeacherPage";
 import Profile from "./Components/Profile";
 
 const App: React.FC = () => {
@@ -21,6 +22,7 @@ const App: React.FC = () => {
         <Route path="/welcome" element={<Welcome />}></Route>
         <Route path="/around-the-world" element={<WordQuiz />}></Route>
         <Route path="/:country" element={<CountryQuiz />}></Route>
+        <Route path="/teacher" element={<TeacherPage />}></Route>
       </Routes>
         <section className="footer"></section>
       <section className="footer">This is a footer</section>
