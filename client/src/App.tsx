@@ -10,9 +10,12 @@ import CountryQuiz from "./Components/CountryQuiz";
 import "./css/App.scss";
 import TeacherPage from "./Components/TeacherPage";
 import Profile from "./Components/Profile";
+import StudentProfile from "./Components/StudentProfile";
+
 import { UserContext } from "./context/User";
 import { useEffect, useState } from "react";
 import { useAuth0, User } from "@auth0/auth0-react";
+
 
 const App: React.FC = () => {
   type JeographyUser = User & {
@@ -45,19 +48,20 @@ const App: React.FC = () => {
   }, [isAuthenticated]);
 
   return (
-    <UserContext.Provider value={{ profile, setProfile }}>
-      <div className="App">
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/select_quiz" element={<SelectQuiz />}></Route>
-          <Route path="/profile" element={<Profile />}></Route>
-          <Route path="/welcome" element={<Welcome />}></Route>
-          <Route path="/around-the-world" element={<WordQuiz />}></Route>
-          <Route path="/countries/:country" element={<CountryQuiz />}></Route>
-          <Route path="/teacher" element={<TeacherPage />}></Route>
-        </Routes>
-        <section className="footer"></section>
+  <UserContext.Provider value={{ profile, setProfile }}>
+    <div className="App">
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/select_quiz" element={<SelectQuiz />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/welcome" element={<Welcome />}></Route>
+        <Route path="/around-the-world" element={<WordQuiz />}></Route>
+        <Route path="/countries/:country" element={<CountryQuiz />}></Route>
+        <Route path="/teacher" element={<TeacherPage />}></Route>
+        <Route path="/students/:nickname" element={<StudentProfile />}></Route>
+      </Routes>
+      
         <section className="footer"></section>
       </div>
     </UserContext.Provider>
