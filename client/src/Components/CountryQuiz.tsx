@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import * as api from "../api";
 import { CountryQuestion } from "../Types/types";
 import { useParams } from "react-router-dom";
-import '../css/Quiz.scss';
+import "../css/Quiz.scss";
 
 const CountryQuiz = () => {
   let country: string = useParams().country + "DB";
@@ -14,7 +14,8 @@ const CountryQuiz = () => {
   const [score, setScore] = useState(0);
   const [answer, setAnswer] = useState("");
   const [disableNextButton, setDisableNextButton] = useState(true);
-
+  const [btnClass, setBtnClass] = useState([true, true, true, true])
+  
   useEffect(() => {
     api.getCountry(country).then((questions) => {
       setQuestions(questions);
@@ -35,79 +36,83 @@ const CountryQuiz = () => {
     ].sort();
 
     return (
-      <section className="QuizPage">
-        <section className="quiz-progress">  Question ({questionNumber + 1}/5)</section>
+      <section className="quiz-progress">
+        {" "}
+        Question ({questionNumber + 1}/5)
         <section className="quiz-title">
-        <p>This Quiz is on...</p>
-        <p className="quiz-country">
-            
-  {quiz === "NIRELAND" ? "NORTHERN IRELAND" : quiz}
-        </p>
+          <p>This Quiz is on...</p>
+          <p className="quiz-country">
+            {quiz === "NIRELAND" ? "NORTHERN IRELAND" : quiz}
+          </p>
         </section>
-          <section className="quiz-body">
-        <p className="question-title">
-          {questions[questionNumber].question}
-        </p>
-        <section className="possible-answers">
-
-        <div>
-          <section className="flex">
-
-          <button className="answer-option"
-            onClick={() => {
-              setAnswer(answers[0]);
-              setDisableNextButton(false);
-            }}
-            >
-            {answers[0]}
-          </button>
-          <button className="answer-option"
-            onClick={() => {
-              setAnswer(answers[1]);
-              setDisableNextButton(false);
-            }}
-            >
-            {answers[1]}
-          </button>
+        <section className="quiz-body">
+          <p className="question-title">{questions[questionNumber].question}</p>
+          <section className="possible-answers">
+            <div>
+              <section className="flex">
+                <button
+                  className={btnClass[0] ? 'answer-option' : 'answer-option-clicked'}
+                  onClick={() => {
+                    btnClass ? setBtnClass([false, true, true, true]) : setBtnClass([true, true, true, true])
+                    setAnswer(answers[0]);
+                    setDisableNextButton(false);
+                  }}
+                >
+                  {answers[0]}
+                </button>
+                <button
+                  className={btnClass[1] ? 'answer-option' : 'answer-option-clicked'}
+                  onClick={() => {
+                    btnClass ? setBtnClass([true, false, true, true]) : setBtnClass([true, false, true, true])
+                    setAnswer(answers[1]);
+                    setDisableNextButton(false);
+                  }}
+                >
+                  {answers[1]}
+                </button>
               </section>
               <section className="flex">
-
-          <button className="answer-option"
-            onClick={() => {
-              setAnswer(answers[2]);
-              setDisableNextButton(false);
-            }}
-            >
-            {answers[2]}
-          </button>
-          <button className="answer-option"
-            onClick={() => {
-              setAnswer(answers[3]);
-              setDisableNextButton(false);
-            }}
-            >
-            {answers[3]}
-          </button>
+                <button
+                  className={btnClass[2] ? 'answer-option' : 'answer-option-clicked'}
+                  onClick={() => {
+                    btnClass ? setBtnClass([true, true, false, true]) : setBtnClass([true, true, false, true])
+                    setAnswer(answers[2]);
+                    setDisableNextButton(false);
+                  }}
+                >
+                  {answers[2]}
+                </button>
+                <button
+                  className={btnClass[3] ? 'answer-option' : 'answer-option-clicked'}
+                  onClick={() => {
+                    btnClass ? setBtnClass([true, true, true, false]) : setBtnClass([true, true, true, false])
+                    setAnswer(answers[3]);
+                    setDisableNextButton(false);
+                  }}
+                >
+                  {answers[3]}
+                </button>
               </section>
-        </div>
-        </section>
-        <button className="next-question-btn"
-          onClick={() => {
-            setQuestionNumber(questionNumber + 1);
-            setDisableNextButton(true);
-            if (answer === questions[questionNumber].correct_answer) {
-              setScore(score + 1);
-            }
-          }}
-          disabled={disableNextButton}
-          >
-          Next Question
-        </button>
-            </section>
-          <section className="help-button-container">
-        <button className="help-button">Ask for help</button>
-
+            </div>
           </section>
+          <button
+            className="next-question-btn"
+            onClick={() => {
+              setQuestionNumber(questionNumber + 1);
+              setDisableNextButton(true);
+              setBtnClass([true, true, true, true])
+              if (answer === questions[questionNumber].correct_answer) {
+                setScore(score + 1);
+              }
+            }}
+            disabled={disableNextButton}
+          >
+            Next Question
+          </button>
+        </section>
+        <section className="help-button-container">
+          <button className="help-button">Ask for help</button>
+        </section>
       </section>
     );
   }

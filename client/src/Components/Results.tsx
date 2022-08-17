@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Button } from "@mui/material";
-import { Link, NavLink } from "react-router-dom";
-import Header from "./Header";
+import { Link } from "react-router-dom";
+import "../css/Results.scss";
 import * as api from "../api";
 import { Badges } from "../Types/types";
 
@@ -43,27 +43,48 @@ const Results = ({ score, category }: UserScore) => {
     return <p>Loading...</p>;
   } else {
     return (
-      <div>
-        <section className="Results-Body">
-          <section className="Results-Title">
-            <p>Results from your quiz on :</p>
-            <p>{category}</p>
-            <img
-              src={score > 2 ? badges[badgeNumber].img_url : avatar}
-              alt="avatar"
-            />
-            <p>{score} / 5</p>
-            <p>{score > 2 ? "Well done, you earned a Jeo!" : lowScore}</p>
-            <Link to="/select_quiz">
-              <Button size="small" variant="contained">
-                Take another quiz !
-              </Button>
-            </Link>
-            <Button size="small" variant="contained">
-              Ask for help
-            </Button>
+
+      <div className="results_page">
+        <p className="results">Results from your quiz on :</p>
+        <p className="category">{category}</p>
+        <section className="avatar_section">
+          <img
+            className="img"
+            src={score > 2 ? badges[badgeNumber].img_url : avatar}
+            alt="avatar"
+          />
+          <section className="score_section">
+            <p className="score">{score} / 5</p>
+            <p className="score_text">
+              {score > 2 ? "Well done, you earned a Jeo!" : lowScore}
+            </p>
           </section>
-          <section className="Results-Badge"></section>
+        </section>
+        <section className="results_button">
+          <Link to="/select_quiz">
+            <Button
+              size="small"
+              variant="contained"
+              style={{
+                borderRadius: 35,
+                backgroundColor: "#ffc107",
+                fontSize: "18px",
+              }}
+            >
+              Take another quiz !
+            </Button>
+          </Link>
+          <Button
+            size="small"
+            variant="contained"
+            style={{
+              borderRadius: 35,
+              backgroundColor: "#ef6694",
+              fontSize: "18px",
+            }}
+          >
+            Ask for help
+          </Button>
         </section>
       </div>
     );
