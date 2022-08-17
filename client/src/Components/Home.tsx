@@ -24,28 +24,35 @@ const Home = () => {
         <p className="home-title-1">Be a geography whizz</p>
         <p className="home-title-2">with our Jeography quizz!</p>
       </div>
-      <section>
+      <section className="home-welcome">
         <p>
-          Take a quiz and collect your badge, it's called Jeo.
-        </p>
-        <p>Win at geography and watch your collection grow!</p>
+          Take a quiz and collect your badge, it's called Jeo. Win at geography and watch your collection grow.</p>
       </section>
-      <div>
+      <div className="buttons-container">
+      <section className="button-container">
+
       <ThemeProvider theme={theme}>
         <Button size="small" variant="contained" color="secondary">
           I'm a teacher
         </Button>
         </ThemeProvider>
+      </section>
+      <section className="button-container">
+
         <Link to="/select_quiz">
         <Button className="student-btn" size="small" variant="contained">
           I'm a student
           
         </Button>
         </Link>
+      </section>
       </div>
       </section>
       <section className="align-right">
-      <img src="https://media.giphy.com/media/UOdoMz3baCENO/giphy.gif"></img>
+        <section className="gif-container">
+      <img className="gif" src="https://media.giphy.com/media/UOdoMz3baCENO/giphy.gif"></img>
+
+        </section>
       </section>
     </section>
   );

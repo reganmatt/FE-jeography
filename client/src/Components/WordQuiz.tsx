@@ -44,7 +44,6 @@ const WordQuiz = () => {
          {questions[questionNumber].question}
         </p>
         <section className="possible-answers">
-
           <section className="flex">
             <button className="answer-option"
               onClick={() => {
@@ -81,7 +80,6 @@ const WordQuiz = () => {
               {answers[3]}
             </button>
           </section>
-
         </section>
         <button className="next-question-btn"
           onClick={() => {
