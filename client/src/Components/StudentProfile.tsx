@@ -27,8 +27,7 @@ const StudentProfile = () => {
       <section >
         <section>
           <h1>Hello there, {nickname}!</h1>          
-        </section>
-        
+        </section>        
         <section >                
           {student.map((student, index) => ( 
           <div key={index} className="student-item">           

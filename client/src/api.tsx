@@ -55,6 +55,8 @@ export function getStudentByUsername (nickname:string) {
     })
     .then(({ data: {profile} }) => {
       let student: Students[] = profile;
+      console.log(student)
       return student;
     })
 }
+
