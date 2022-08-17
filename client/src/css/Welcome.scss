@@ -1,0 +1,62 @@
+$primary-1: #2890CC;
+$primary-2: #FFCF40;
+$primary-3: #6AC782;
+$secondary: #EC64BE;
+$secondary-2: #000000ae;
+
+.profile-btn {
+    background-color: $primary-2;
+    width: 20%;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+    font-weight: 900;
+    text-align:center;
+    margin: 0 auto;
+    display:block;
+    font-size: 140%;
+    padding: 10px, 0;
+    margin-right: 6%;
+}
+
+.quiz-btn {
+    background-color: $primary-2;
+    width: 20%;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+    font-weight: 900;
+    text-align:center;
+    margin: 0 auto;
+    display:block;
+    font-size: 140%;
+    padding: 10px, 0;
+    margin-left: 6%;
+}
+
+.welcome-text {
+    color: $primary-1;
+    font-size: 700%;
+    text-align:center;
+}
+
+.welcome-btn-container{
+    display: flex;
+    align-items: row;
+    justify-content: space-evenly;
+    margin-top: 30px;
+}
+
+.welcome-jeoranch-container{
+display: flex;
+align-items: row;
+justify-content: space-between;
+margin-top: 100px;
+}
+
