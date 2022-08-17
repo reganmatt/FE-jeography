@@ -19,8 +19,8 @@ const Results = ({ score, category }: UserScore) => {
   useEffect(() => {
     api.getBadges().then((badges) => {
       setBadges([...badges]);
-      let a: number = Math.round(getRandomArbitrary(0, badges.length - 1));
-      setBadgeNumber(a);
+      let randomBadgeNumber: number = Math.round(getRandomArbitrary(0, badges.length - 1));
+      setBadgeNumber(randomBadgeNumber);
       setIsLoading(false);
     });
   }, [score, category]);
@@ -43,6 +43,7 @@ const Results = ({ score, category }: UserScore) => {
     return <p>Loading...</p>;
   } else {
     return (
+
       <div className="results_page">
         <p className="results">Results from your quiz on :</p>
         <p className="category">{category}</p>
@@ -67,7 +68,6 @@ const Results = ({ score, category }: UserScore) => {
               style={{
                 borderRadius: 35,
                 backgroundColor: "#ffc107",
-                // padding: "8px 20px",
                 fontSize: "18px",
               }}
             >
@@ -80,7 +80,6 @@ const Results = ({ score, category }: UserScore) => {
             style={{
               borderRadius: 35,
               backgroundColor: "#ef6694",
-              // padding: "8px 20px",
               fontSize: "18px",
             }}
           >

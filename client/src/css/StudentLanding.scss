@@ -2,34 +2,37 @@ $primary-1: #2890CC;
 $primary-2: #FFCF40;
 $primary-3: #6AC782;
 $secondary: #EC64BE;
+$secondary-2: #000000ae;
 
 .page-title-container {
-   
 }
 
 .page-title {
-    color: rgba(0, 0, 0, 0.683);
-    font-size: 1.5rem;
+    color: #000000ae;
+    font-size: 1.7rem;
     margin-top: 10px;
-    margin-left: 8px;
+    margin-left: 30px;
 }
 
 .sub-title {
     font-size: 1rem;
-    margin-left: 8px;
+    margin-left: 30px;
+    margin-top: 3px;
     margin-bottom: 20px;
 }
 
 .maps-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    margin: 30px;;
 }
 
 .flex {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 10px 0;
 }
 
 
@@ -44,12 +47,12 @@ $secondary: #EC64BE;
 width: 120px;
 height: 20px;
 text-align: center;
+color:$secondary-2
 }
 
 .help-button-container {
     display: flex;
-    align-items: flex-start;
-    margin: 20px 0 15px 0;
+    align-items: flex-start; 
     padding: 15px;
 }
 
@@ -60,9 +63,10 @@ text-align: center;
     box-shadow: none;
     padding: 10px;
     border-radius: 15px;
-    -webkit-box-shadow: none;
-	-moz-box-shadow: none;
     font-weight: 900;
+margin-bottom: 30px;
+margin-left: 30px;
+margin-top: 50px;
 }
 
 a:link { text-decoration: none; }
