@@ -10,6 +10,8 @@ import CountryQuiz from "./Components/CountryQuiz";
 import "./css/App.scss";
 import TeacherPage from "./Components/TeacherPage";
 import Profile from "./Components/Profile";
+import StudentProfile from "./Components/StudentProfile";
+
 
 const App: React.FC = () => {
   return (
@@ -23,6 +25,7 @@ const App: React.FC = () => {
         <Route path="/around-the-world" element={<WordQuiz />}></Route>
         <Route path="/:country" element={<CountryQuiz />}></Route>
         <Route path="/teacher" element={<TeacherPage />}></Route>
+        <Route path="/students/:nickname" element={<StudentProfile />}></Route>
       </Routes>
         <section className="footer"></section>
       <section className="footer">This is a footer</section>

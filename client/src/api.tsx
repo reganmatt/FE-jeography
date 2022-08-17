@@ -42,7 +42,19 @@ export function getStudents() {
   return jeographyApi
     .get("/students")
     .then(({ data: {students} }) => {
-      console.log(students, "in the api")
       return students;
+    })
+}
+
+export function getStudentByUsername (nickname:string) {
+  return jeographyApi
+    .get(`/student/${nickname}`, {
+      params: {
+        username: nickname,
+      }
+    })
+    .then(({ data: {profile} }) => {
+      let student: Students[] = profile;
+      return student;
     })
 }

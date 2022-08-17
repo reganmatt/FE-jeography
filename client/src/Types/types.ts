@@ -34,3 +34,5 @@ export interface Question {
     jeoRanch:string[],
     userStatus:string
   }
+
+  
