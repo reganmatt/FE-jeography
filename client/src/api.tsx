@@ -1,5 +1,12 @@
 import axios from "axios";
-import { Question, CountryQuestion, Badges, Students, Comments } from "./Types/types";
+
+import {
+  Question,
+  CountryQuestion,
+  Badges,
+  Students,
+  Comments,
+} from "./Types/types";
 
 const aroundTheWordAPI = axios.create({
   baseURL: "https://opentdb.com",
@@ -39,12 +46,11 @@ export function getCountry(country: string) {
 }
 
 export function getStudents() {
-  return jeographyApi
-    .get("/students")
-    .then(({ data: {students} }) => {
-      return students;
-    })
+  return jeographyApi.get("/students").then(({ data: { students } }) => {
+    return students;
+  });
 }
+
 
 export function getComments(nickname: string) {
   return jeographyApi
@@ -63,12 +69,31 @@ export function getStudentByUsername (nickname:string) {
     .get(`/student/${nickname}`, {
       params: {
         username: nickname,
-      }
+      },
     })
-    .then(({ data: {profile} }) => {
+    .then(({ data: { profile } }) => {
       let student: Students[] = profile;
-      console.log(student)
       return student;
-    })
+    });
 }
 
+export function getCommentsByUsername(nickname: string) {
+  return jeographyApi
+    .get(`/comments/${nickname}`, {
+      params: {
+        username: nickname,
+      },
+    })
+    .then(({ data: { comments } }) => {
+      let studentComments: Comments[] = comments;
+      return studentComments;
+    });
+}
+
+export function postCommentByUsername(username: string, newComment: object) {
+  return jeographyApi
+    .post(`/comments/${username}`, newComment)
+    .then(({ data }) => {
+      return data.comment;
+    });
+}

@@ -41,3 +41,10 @@ export interface Question {
     username: number;
     created_at: string;
   }
+
+  export interface Comments {  
+    _id:string,
+    body:string,
+    username:string,
+    created_at:string,
+  }
