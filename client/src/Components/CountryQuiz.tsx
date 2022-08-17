@@ -35,11 +35,9 @@ const CountryQuiz = () => {
     ].sort();
 
     return (
-      <section className="QuizPage">
-        <section className="quiz-progress">
-          {" "}
-          Question ({questionNumber + 1}/5)
-
+      <section className="quiz-progress">
+        {" "}
+        Question ({questionNumber + 1}/5)
         <section className="quiz-title">
           <p>This Quiz is on...</p>
           <p className="quiz-country">
