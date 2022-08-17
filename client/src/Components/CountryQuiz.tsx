@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import * as api from "../api";
 import { CountryQuestion } from "../Types/types";
 import { useParams } from "react-router-dom";
+import '../css/Quiz.scss';
 
 const CountryQuiz = () => {
   let country: string = useParams().country + "DB";
@@ -34,50 +35,64 @@ const CountryQuiz = () => {
     ].sort();
 
     return (
-      <section>
+      <section className="QuizPage">
         <Header />
-        <p>
-          This Quiz is on: {quiz === "NIRELAND" ? "NORTHERN IRELAND" : quiz}
+        <section className="quiz-progress">  Question ({questionNumber + 1}/5)</section>
+        <section className="quiz-title">
+        <p>This Quiz is on...</p>
+        <p className="quiz-country">
+            
+  {quiz === "NIRELAND" ? "NORTHERN IRELAND" : quiz}
         </p>
-        <p>
-          Question ({questionNumber}/5): {questions[questionNumber].question}
+        </section>
+          <section className="quiz-body">
+        <p className="question-title">
+          {questions[questionNumber].question}
         </p>
+        <section className="possible-answers">
+
         <div>
-          <p>Answers:</p>
-          <button
+          <section className="flex">
+
+          <button className="answer-option"
             onClick={() => {
               setAnswer(answers[0]);
               setDisableNextButton(false);
             }}
-          >
+            >
             {answers[0]}
           </button>
-          <button
+          <button className="answer-option"
             onClick={() => {
               setAnswer(answers[1]);
               setDisableNextButton(false);
             }}
-          >
+            >
             {answers[1]}
           </button>
-          <button
+              </section>
+              <section className="flex">
+
+          <button className="answer-option"
             onClick={() => {
               setAnswer(answers[2]);
               setDisableNextButton(false);
             }}
-          >
+            >
             {answers[2]}
           </button>
-          <button
+          <button className="answer-option"
             onClick={() => {
               setAnswer(answers[3]);
               setDisableNextButton(false);
             }}
-          >
+            >
             {answers[3]}
           </button>
+              </section>
         </div>
-        <button
+        </section>
+        <button className="next-question-btn"
           onClick={() => {
             setQuestionNumber(questionNumber + 1);
             setDisableNextButton(true);
@@ -86,14 +101,14 @@ const CountryQuiz = () => {
             }
           }}
           disabled={disableNextButton}
-        >
+          >
           Next Question
         </button>
-        <div>
-          <p>Don't lose your Jeo Badges!</p>
-          <p>Sign up or login to collect your Jeos in your own ranch.</p>
-        </div>
-        <button>Ask for help</button>
+            </section>
+          <section className="help-button-container">
+        <button className="help-button">Ask for help</button>
+
+          </section>
       </section>
     );
   }

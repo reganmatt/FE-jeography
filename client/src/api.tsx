@@ -14,7 +14,6 @@ export function getAroundTheWordQuiz() {
     .get("/api.php?amount=5&category=22&difficulty=easy&type=multiple")
     .then((res) => {
       let questions: Question[] = res.data.results;
-
       return questions;
     });
 }

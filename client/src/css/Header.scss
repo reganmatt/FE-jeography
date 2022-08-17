@@ -1,5 +1,5 @@
 .header {
-    height: 70px;
+    height: 60px;
     display: flex;
     flex-direction: row;
     justify-content:space-between;
@@ -19,6 +19,7 @@
 
 .btn {
     background-color: #FFCF40;
+    width: 100px;
     color: #FFFFFF;
     padding: 10px;
     border-radius: 15px;
