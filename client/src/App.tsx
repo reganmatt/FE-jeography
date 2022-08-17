@@ -21,7 +21,7 @@ const App: React.FC = () => {
 
   const {isAuthenticated, user} = useAuth0()
   const [profile, setProfile] = useState<JeographyUser>()
-
+  
   
   useEffect(() => {
     if (isAuthenticated && user !== undefined) {
