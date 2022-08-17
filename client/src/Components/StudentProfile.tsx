@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import * as api from "../api";
 import { Students } from "../Types/types";
 import { useParams, Link } from "react-router-dom";
+import StudentComments from "./StudentComments";
 //import '../cssnkQuiz.scss';
 
 const StudentProfile = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [student, setStudent] = useState<Students[]>([]);
+  const [name, setName] = useState("");
   let nickname = useParams().nickname;
 
   useEffect(() => {
@@ -15,6 +17,7 @@ const StudentProfile = () => {
       api.getStudentByUsername(nickname).then((student) => {
         console.log(student, "in the student");
         setStudent(student);
+        setName(student[0].username);
         setIsLoading(false);
       });
     }
@@ -26,25 +29,22 @@ const StudentProfile = () => {
     return (
       <section>
         <section>
-          <h1>Hello there, {nickname}!</h1>
+          <h1>{name.toUpperCase()}'s PROFILE</h1>
         </section>
         <section>
           {student.map((student, index) => (
             <div key={index} className="student-item">
-              <h5 className="box-caption">
-                <Link to={`/students/${student.username}`}>
-                  {student.username}
-                </Link>
-              </h5>
-              <p>You've collected {student.userPoints} Jeo points</p>
+              <p>
+                {name} collected {student.userPoints} Jeo points
+              </p>
             </div>
           ))}
         </section>
         <section>
-          <p>Jeo Ranch</p>
-          <p>Select a Jeo badge to replace your avatar!</p>
+          <p>List of avatars {name} collected : </p>
           {student[0].jeoRanch.map((img, index) => (
             <img
+              key={index}
               src={img}
               alt="studentAvatar"
               className="avatar"
@@ -53,11 +53,13 @@ const StudentProfile = () => {
             />
           ))}
         </section>
-        <Link to="/select_quiz">
+
+        <Link to="/teacher">
           <Button size="small" variant="contained">
-            Take a quiz
+            See Teacher's Page
           </Button>
         </Link>
+        <StudentComments nickname={name} />
       </section>
     );
   }

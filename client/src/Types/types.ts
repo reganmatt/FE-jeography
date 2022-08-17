@@ -39,3 +39,13 @@ export interface Question {
     
   }
 
+  export interface Comments {  
+    _id:string,
+    body:string,
+    username:string,
+    created_at:string,
+  }
+  
+  // export interface NewComment {  
+  //   body:string,
+  // }
