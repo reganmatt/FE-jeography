@@ -3,7 +3,7 @@ import {useState, useEffect} from "react";
 import {Link} from "react-router-dom";
 import {Button} from "@mui/material";
 import {Students} from "../Types/types"
-//import "../css/Results.scss";
+import "../css/TeacherPage.scss";
 
 
 
