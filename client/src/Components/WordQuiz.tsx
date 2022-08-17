@@ -12,6 +12,7 @@ const WordQuiz = () => {
   const [score, setScore] = useState(0);
   const [answer, setAnswer] = useState("");
   const [disableNextButton, setDisableNextButton] = useState(true);
+  const [btnClass, setBtnClass] = useState([true, true, true, true])
  
 
   useEffect(() => {
@@ -45,16 +46,18 @@ const WordQuiz = () => {
         </p>
         <section className="possible-answers">
           <section className="flex">
-            <button className="answer-option"
+            <button className={btnClass[0] ? 'answer-option' : 'answer-option-clicked'}
               onClick={() => {
+                btnClass ? setBtnClass([false, true, true, true]) : setBtnClass([false, true, true, true])
                 setAnswer(answers[0]);
                 setDisableNextButton(false);
               }}
               >
               {answers[0]}
             </button>
-            <button className="answer-option"
+            <button className={btnClass[1] ? 'answer-option' : 'answer-option-clicked'}
               onClick={() => {
+                btnClass ? setBtnClass([true, false, true, true]) : setBtnClass([true, false, true, true])
                 setAnswer(answers[1]);
                 setDisableNextButton(false);
               }}
@@ -63,16 +66,18 @@ const WordQuiz = () => {
             </button>
           </section>
           <section className="flex">
-            <button className="answer-option"
+            <button className={btnClass[2] ? 'answer-option' : 'answer-option-clicked'}
               onClick={() => {
+                btnClass ? setBtnClass([true, true, false, true]) : setBtnClass([true, true, false, true])
                 setAnswer(answers[2]);
                 setDisableNextButton(false);
               }}
               >
               {answers[2]}
             </button>
-            <button className="answer-option"
+            <button className={btnClass[3] ? 'answer-option' : 'answer-option-clicked'}
               onClick={() => {
+                btnClass ? setBtnClass([true, true, true, false]) : setBtnClass([true, true, true, false])
                 setAnswer(answers[3]);
                 setDisableNextButton(false);
               }}
@@ -83,6 +88,7 @@ const WordQuiz = () => {
         </section>
         <button className="next-question-btn"
           onClick={() => {
+            setBtnClass([true, true, true, true])
             setQuestionNumber(questionNumber + 1);
             setDisableNextButton(true);
             if (answer === questions[questionNumber].correct_answer) {
