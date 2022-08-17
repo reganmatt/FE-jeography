@@ -36,12 +36,23 @@ $secondary: #EC64BE;
 }
 
 .answer-option {
+    background-color: $primary-1;
     margin: 5px;
     width: 150px;
     padding: 3px;
     min-height: 75px;
     border-radius: 15px;
+    cursor: pointer;
+}
 
+.answer-option-clicked {
+    background-color: $primary-2;
+    margin: 5px;
+    width: 150px;
+    padding: 3px;
+    min-height: 75px;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
 .selected {
@@ -72,6 +83,7 @@ $secondary: #EC64BE;
     -webkit-box-shadow: none;
 	-moz-box-shadow: none;
     font-weight: 900;
+    cursor: pointer;
 }
 
 

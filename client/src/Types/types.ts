@@ -35,8 +35,11 @@ export interface Question {
     userStatus:string
   }
 
-  export interface WelcomeJeo {
-    
+  export interface Comments {
+    _id: string;
+    body: string;
+    username: number;
+    created_at: string;
   }
 
   export interface Comments {  
@@ -45,7 +48,3 @@ export interface Question {
     username:string,
     created_at:string,
   }
-  
-  // export interface NewComment {  
-  //   body:string,
-  // }
