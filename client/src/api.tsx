@@ -1,5 +1,5 @@
 import axios from "axios";
-import { Question, CountryQuestion, Badges, Students } from "./Types/types";
+import { Question, CountryQuestion, Badges, Students, Comments } from "./Types/types";
 
 const aroundTheWordAPI = axios.create({
   baseURL: "https://opentdb.com",
@@ -46,6 +46,18 @@ export function getStudents() {
     })
 }
 
+export function getComments(nickname: string) {
+  return jeographyApi
+    .get(`/comments/${nickname}`, {
+      params: {
+        username: nickname,
+      },
+    })
+    .then(({ data }) => {
+      let comments: Comments[] = data.comments;
+      return comments;
+    });
+}
 export function getStudentByUsername (nickname:string) {
   return jeographyApi
     .get(`/student/${nickname}`, {
