@@ -35,13 +35,6 @@ export interface Question {
     userStatus:string
   }
 
-  export interface Comments {
-    _id: string;
-    body: string;
-    username: number;
-    created_at: string;
-  }
-
   export interface Comments {  
     _id:string,
     body:string,

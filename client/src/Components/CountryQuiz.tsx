@@ -6,6 +6,7 @@ import { CountryQuestion } from "../Types/types";
 import { useParams } from "react-router-dom";
 import "../css/Quiz.scss";
 
+
 const CountryQuiz = () => {
   let country: string = useParams().country + "DB";
   let [questions, setQuestions] = useState<CountryQuestion[]>([]);
@@ -16,11 +17,13 @@ const CountryQuiz = () => {
   const [disableNextButton, setDisableNextButton] = useState(true);
   const [btnClass, setBtnClass] = useState([true, true, true, true])
   
+  
   useEffect(() => {
     api.getCountry(country).then((questions) => {
       setQuestions(questions);
       setIsLoading(false);
     });
+    
   }, []);
 
   let quiz = country.slice(0, country.length - 2).toUpperCase();
@@ -119,3 +122,6 @@ const CountryQuiz = () => {
 };
 
 export default CountryQuiz;
+
+
+              
