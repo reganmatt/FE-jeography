@@ -6,6 +6,7 @@ import { CountryQuestion } from "../Types/types";
 import { useParams } from "react-router-dom";
 import "../css/Quiz.scss";
 
+
 const CountryQuiz = () => {
   let country: string = useParams().country + "DB";
   let [questions, setQuestions] = useState<CountryQuestion[]>([]);
@@ -14,12 +15,15 @@ const CountryQuiz = () => {
   const [score, setScore] = useState(0);
   const [answer, setAnswer] = useState("");
   const [disableNextButton, setDisableNextButton] = useState(true);
-
+  const [btnClass, setBtnClass] = useState([true, true, true, true])
+  
+  
   useEffect(() => {
     api.getCountry(country).then((questions) => {
       setQuestions(questions);
       setIsLoading(false);
     });
+    
   }, []);
 
   let quiz = country.slice(0, country.length - 2).toUpperCase();
@@ -50,8 +54,9 @@ const CountryQuiz = () => {
             <div>
               <section className="flex">
                 <button
-                  className="answer-option"
+                  className={btnClass[0] ? 'answer-option' : 'answer-option-clicked'}
                   onClick={() => {
+                    btnClass ? setBtnClass([false, true, true, true]) : setBtnClass([true, true, true, true])
                     setAnswer(answers[0]);
                     setDisableNextButton(false);
                   }}
@@ -59,8 +64,9 @@ const CountryQuiz = () => {
                   {answers[0]}
                 </button>
                 <button
-                  className="answer-option"
+                  className={btnClass[1] ? 'answer-option' : 'answer-option-clicked'}
                   onClick={() => {
+                    btnClass ? setBtnClass([true, false, true, true]) : setBtnClass([true, false, true, true])
                     setAnswer(answers[1]);
                     setDisableNextButton(false);
                   }}
@@ -70,8 +76,9 @@ const CountryQuiz = () => {
               </section>
               <section className="flex">
                 <button
-                  className="answer-option"
+                  className={btnClass[2] ? 'answer-option' : 'answer-option-clicked'}
                   onClick={() => {
+                    btnClass ? setBtnClass([true, true, false, true]) : setBtnClass([true, true, false, true])
                     setAnswer(answers[2]);
                     setDisableNextButton(false);
                   }}
@@ -79,8 +86,9 @@ const CountryQuiz = () => {
                   {answers[2]}
                 </button>
                 <button
-                  className="answer-option"
+                  className={btnClass[3] ? 'answer-option' : 'answer-option-clicked'}
                   onClick={() => {
+                    btnClass ? setBtnClass([true, true, true, false]) : setBtnClass([true, true, true, false])
                     setAnswer(answers[3]);
                     setDisableNextButton(false);
                   }}
@@ -95,6 +103,7 @@ const CountryQuiz = () => {
             onClick={() => {
               setQuestionNumber(questionNumber + 1);
               setDisableNextButton(true);
+              setBtnClass([true, true, true, true])
               if (answer === questions[questionNumber].correct_answer) {
                 setScore(score + 1);
               }
@@ -113,3 +122,6 @@ const CountryQuiz = () => {
 };
 
 export default CountryQuiz;
+
+
+              

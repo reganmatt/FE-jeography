@@ -22,6 +22,24 @@ $secondary-2: #000000ae;
     margin-right: 6%;
 }
 
+.log-profile-btn{
+    background-color: $primary-2;
+    width: 40%;
+    color: #FFFFFF;
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+    font-weight: 900;
+    text-align:center;
+    margin: 0 auto;
+    display:block;
+    font-size: 100%;
+    padding: 10px, 0;
+    margin-right: 6%;
+}
+
 .quiz-btn {
     background-color: $primary-2;
     width: 20%;

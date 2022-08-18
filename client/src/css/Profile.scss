@@ -1,0 +1,102 @@
+$primary-1: #2890CC;
+$primary-2: #FFCF40;
+$primary-3: #6AC782;
+$secondary: #EC64BE;
+$secondary-2: #000000ae;
+$body-font: (color: $secondary-2,
+font-size: 1.2rem);
+
+.profile-greeting {
+    margin: 30px 0 20px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.greeting {
+ color: $secondary-2;
+ font-size: 1.5rem;   
+}
+
+.username {
+    color: $primary-1;
+    margin-left: 6px;
+    font-size: 1.5rem;  
+    font-weight:700;
+}
+
+.jeo-points {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.profile-container {
+    display: flex;
+flex-direction: row;
+justify-content:center;
+}
+
+.default-font {
+    color: $secondary-2;
+    font-size: 1.2rem;
+}
+
+.user-jeo-points {
+    color: $primary-1;
+    margin:0 4px 0 4px;
+    font-size: 1.2rem;
+}
+
+
+.jeo-ranch-title {
+    margin: 50px 0 0 30px;
+    color: $secondary-2;
+    font-size: 1.2rem;
+}
+
+.jeo-container {
+    margin: 15px 0 0 30px;
+}
+
+.jeo-img {
+    width: 100px;
+    margin: 2px
+}
+
+.jeo-img:first-of-type{
+    margin-left: 0;
+}
+
+.teacher-comments {
+margin: 50px 0 0 30px;
+}
+
+.comments-title {
+    color: $secondary-2;
+    font-size: 1.2rem;
+}
+
+.individual-comment {
+    margin: 10px 0 0 0;
+}
+
+.button-container {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+margin: 50px 0 0 0;
+}
+
+.take-quiz-btn {
+    background-color:$primary-3;
+    width: 150px;
+    color: white;
+    box-shadow: none;
+    padding: 10px;
+    border-radius: 15px;
+    -webkit-box-shadow: none;
+	-moz-box-shadow: none;
+    font-weight: 900;
+    cursor: pointer;
+}
