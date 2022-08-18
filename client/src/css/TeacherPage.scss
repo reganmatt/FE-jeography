@@ -1,3 +1,6 @@
+*{
+  margin:0;
+}
 
 .teacher-page {  
   display:flex;
@@ -18,8 +21,9 @@
   margin-bottom: 40px;
   display: flex;
   flex-wrap: wrap;
-  align-items: left;
+  align-items: center;
   justify-content: space-around;
+  flex-direction:row-reverse;
 }
 
 .box-caption {
