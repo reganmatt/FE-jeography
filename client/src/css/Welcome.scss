@@ -4,6 +4,12 @@ $primary-3: #6AC782;
 $secondary: #EC64BE;
 $secondary-2: #000000ae;
 
+.welcome-page {
+    width: 80%;
+ align-items: center;
+ padding-left: 100px;
+}
+
 .profile-btn {
     background-color: $primary-2;
     width: 20%;
@@ -60,7 +66,7 @@ $secondary-2: #000000ae;
 
 .welcome-text {
     color: $primary-1;
-    font-size: 700%;
+    font-size: 500%;
     text-align:center;
 }
 
@@ -78,3 +84,7 @@ justify-content: space-between;
 margin-top: 100px;
 }
 
+.welcome-jeoranch-badge {
+    width: 300%;
+    padding: 20px;
+}

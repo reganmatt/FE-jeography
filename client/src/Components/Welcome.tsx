@@ -37,19 +37,16 @@ const Welcome = () => {
   ];
 
   return (
-    <div>
-      <h1 className="welcome-text">Welcome {profile?.nickname}!</h1>
-      <div className="welcome-btn-container">
-        <button
-          className="profile-btn"
-          type="button"
-          onClick={handleClickProfile}
-        >
-          Visit your profile
-        </button>
-        <button className="quiz-btn" type="button" onClick={handleClickQuiz}>
-          Choose a quiz!
-        </button>
+
+    <div className="welcome-page">
+      <h1 className='welcome-text'>Welcome {profile?.nickname}!</h1>
+      <div className='welcome-btn-container'>
+      <button className='profile-btn' type="button" onClick={handleClickProfile}>
+        Visit your profile
+      </button>
+      <button className='quiz-btn' type="button" onClick={handleClickQuiz}>
+        Choose a quiz!
+      </button>
       </div>
       <div className="welcome-jeoranch-container">
         <img
