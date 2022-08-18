@@ -10,7 +10,6 @@ import "../css/TeacherPage.scss";
 const TeacherPage = () => {
   const [students, setStudents] = useState<Students[]>([]);
   
-
   useEffect(() => {
    api.getStudents().then((students)=> setStudents([...students]))
   }, [])
@@ -29,7 +28,7 @@ const TeacherPage = () => {
          </div>
        ))}
      </section>     
-       <Link to="/select_quiz">
+       <Link to="/">
          <Button size="small" variant="contained">
            Take me Home
          </Button>
