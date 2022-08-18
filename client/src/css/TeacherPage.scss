@@ -1,17 +1,37 @@
 *{
-  margin:0;    
-  padding: 0.35em 0.75em;
-  
-  }
+  margin:0;
+  font-family: 'Times New Roman', Times, serif;
+}
 
-.teteacher-page {
+.teacher-page {  
   display:flex;
   flex-wrap: wrap;
+  padding: 0.35em 0.75em;
+  width: 100%;
+  max-width: 550px;
+  margin: 0px auto;
+  text-align: left;
+}
+
+.teacher-welcome{
+  margin-top: 60px;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 .teacherpage-students{
-  display:flex;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction:row-reverse;
+}
+
+.box-caption {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align:center;
 }
   
   
