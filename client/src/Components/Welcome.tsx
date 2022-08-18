@@ -39,7 +39,7 @@ const Welcome = () => {
   ];
 
   return (
-    <div >
+    <div className="welcome-page">
       <h1 className='welcome-text'>Welcome {profile?.nickname}!</h1>
       <div className='welcome-btn-container'>
 
