@@ -22,9 +22,11 @@ const TeacherPage = () => {
      </section>
      <section className="teacherpage-students">      
        {students.map((student, index) => (
+        
+        
          <div key={index} className="teacherpage-item">
            <img src={student.avatarURL} alt="studentAvatar" className="avatar" width="100" height="100" />          
-           <h5 className="box-caption"><Link to={`/students/${student.username}`}>{student.username}</Link></h5>
+           <h5 className="box-caption"><Link to={`/students/${student.username}`}>{student.user_metadata.Username}</Link></h5>
          </div>
        ))}
      </section>     

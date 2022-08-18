@@ -1,74 +1,67 @@
-$primary-1: #2890CC;
-$primary-2: #FFCF40;
-$primary-3: #6AC782;
-$secondary: #EC64BE;
+$primary-1: #2890cc;
+$primary-2: #ffcf40;
+$primary-3: #6ac782;
+$secondary: #ec64be;
 $secondary-2: #000000ae;
 
-.homepage {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-left: 30px;
-}
-
 .left-align {
-    display: flex;
-    flex-direction: column;
-padding-top: 50px;
-padding-right: 0;
-    margin: 0;
-
-
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  padding-right: 0;
+  margin: 0;
 }
 
 .home-title {
-    width: 400px;
-    font-size: 1.8rem;
-    margin: 0;
+  font-size: 1.8rem;
+  margin: 0;
+  padding-left: 5%;
 }
 
 .home-title-1 {
-color: $secondary-2;
-width: 400px;
-padding: 0;
-margin: 0;
+  color: $secondary-2;
+  padding: 0;
+  margin: 0;
+  padding-left: 10%;
 }
 
 .home-title-2 {
-    color: $primary-1;
-    width: 400px;
-    margin: 0;
-    }
+  color: $primary-1;
+  margin: 0;
+  padding-left: 10%;
+}
 
 .home-welcome {
-margin: 15px 0 0 0;
-width: 400px;
+  margin: 2% 0 0 0;
+  width: 100%;
 }
 
-.buttons-container {
-    margin-top: 40px;
-    display: flex;
- flex-direction: row;
+img.gif {
+  padding-left: 15%;
 }
 
-.button-container {
-    padding: 15px;
+.log-profile-container {
+  display: flex;
+  align-items: row;
 }
 
-.align-right {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-
-
+div.buttons-container {
+  margin-top: 0px;
+  margin-bottom: 15%;
+  display: flex;
+  justify-content: space-around;
 }
 
-.gif-container {
- margin-right: 80px;
+button {
+  width: 125%;
+  height: 150%;
 }
 
-.log-profile-container{
-    display:flex;
-    align-items: row;
-    
+button:nth-of-type(5) {
+  margin-right: 500px;
+}
+
+section.homepage {
+  display: flex;
+  justify-content: space-around;
 }

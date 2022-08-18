@@ -18,14 +18,18 @@ const Home = () => {
     <section className="homepage">
       <section className="left-align">
         <div className="home-title">
-          <p className="home-title-1">Be a geography whizz</p>
-          <p className="home-title-2">with our Jeography quizz!</p>
+          <h1 className="home-title-1">Be a geography whizz</h1>
+          <h1 className="home-title-2">with our Jeography quizz!</h1>
         </div>
         <section className="home-welcome">
           <p>
             Take a quiz and collect your badge, it's called Jeo. Win at
             geography and watch your collection grow.
           </p>
+          <img
+            className="gif"
+            src="https://media.giphy.com/media/UOdoMz3baCENO/giphy.gif"
+          ></img>
         </section>
         <div className="buttons-container">
           <section className="button-container">
@@ -45,14 +49,6 @@ const Home = () => {
             </Link>
           </section>
         </div>
-      </section>
-      <section className="align-right">
-        <section className="gif-container">
-          <img
-            className="gif"
-            src="https://media.giphy.com/media/UOdoMz3baCENO/giphy.gif"
-          ></img>
-        </section>
       </section>
     </section>
   );

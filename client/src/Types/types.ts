@@ -33,6 +33,7 @@ export interface Question {
     userPoints:number,
     jeoRanch:string[],
     userStatus:string
+    user_metadata:any
   }
 
   export interface Comments {  
