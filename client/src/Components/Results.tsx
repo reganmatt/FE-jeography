@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../css/Results.scss";
 import * as api from "../api";
 import { Badges } from "../Types/types";
+import ConfettiWrap from "./ConfettiWrap";
 
 interface UserScore {
   score: number;
@@ -15,7 +16,7 @@ const Results = ({ score, category }: UserScore) => {
   const [badges, setBadges] = useState<Badges[]>([]);
   const [badgeNumber, setBadgeNumber] = useState<number>(NaN);
   const avatar: string = "https://i.imgur.com/72YttcG.png";
-
+ 
   useEffect(() => {
     api.getBadges().then((badges) => {
       setBadges([...badges]);
@@ -58,6 +59,7 @@ const Results = ({ score, category }: UserScore) => {
             <p className="score_text">
               {score > 2 ? "Well done, you earned a Jeo!" : lowScore}
             </p>
+            {score > 2 ? <ConfettiWrap /> : null}
           </section>
         </section>
         <section className="results_button">
