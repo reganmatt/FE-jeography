@@ -27,36 +27,39 @@ const StudentProfile = () => {
   } else {
     return (
       <section className="teacher-student">
-        <section >
+        <section className="mario1" >
           <h1 >{name.toUpperCase()}'s PROFILE</h1>
         </section>
-        <section>
+        <section className="mario1">
           {student.map((student, index) => (
             <div key={index} className="student-item">
               <p>
-                {name} collected {student.userPoints} Jeo points
+                {student.userPoints} Jeo points
               </p>
             </div>
           ))}
         </section>
-        <section>
-          <p>List of avatars {name} collected : </p>
+        <section className="mario1">
+          <p className="mario2">Jeos collected : </p>
           {student[0].jeoRanch.map((img, index) => (
-            <img
+            <img 
               key={index}
               src={img}
               alt="studentAvatar"
-              className="avatar"
+              className="mario2"
               width="100"
               height="100"
             />
           ))}
         </section>
+        <div className="mario1">
+
         <Link to="/teacher">
           <Button size="small" variant="contained">
             See Teacher's Page
           </Button>
         </Link>
+        </div>
         <StudentComments nickname={name} />
       </section>
     );
