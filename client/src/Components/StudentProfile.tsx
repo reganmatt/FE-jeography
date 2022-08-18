@@ -4,18 +4,17 @@ import * as api from "../api";
 import { Students } from "../Types/types";
 import { useParams, Link } from "react-router-dom";
 import StudentComments from "./StudentComments";
-//import '../cssnkQuiz.scss';
 
 const StudentProfile = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [student, setStudent] = useState<Students[]>([]);
   const [name, setName] = useState("");
+
   let nickname = useParams().nickname;
 
   useEffect(() => {
     if (nickname !== undefined) {
       api.getStudentByUsername(nickname).then((student) => {
-        console.log(student, "in the student");
         setStudent(student);
         setName(student[0].username);
         setIsLoading(false);
@@ -27,9 +26,9 @@ const StudentProfile = () => {
     return <p>Loading ...</p>;
   } else {
     return (
-      <section>
-        <section>
-          <h1>{name.toUpperCase()}'s PROFILE</h1>
+      <section className="teacher-student">
+        <section >
+          <h1 >{name.toUpperCase()}'s PROFILE</h1>
         </section>
         <section>
           {student.map((student, index) => (
@@ -53,7 +52,6 @@ const StudentProfile = () => {
             />
           ))}
         </section>
-
         <Link to="/teacher">
           <Button size="small" variant="contained">
             See Teacher's Page

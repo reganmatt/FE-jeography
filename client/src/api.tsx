@@ -51,7 +51,6 @@ export function getStudents() {
   });
 }
 
-
 export function getComments(nickname: string) {
   return jeographyApi
     .get(`/comments/${nickname}`, {
@@ -64,11 +63,11 @@ export function getComments(nickname: string) {
       return comments;
     });
 }
-export function getStudentByUsername (nickname:string) {
+export function getStudentByUsername(username: string) {
   return jeographyApi
-    .get(`/student/${nickname}`, {
+    .get(`/student/${username}`, {
       params: {
-        username: nickname,
+        Username: username,
       },
     })
     .then(({ data: { profile } }) => {
